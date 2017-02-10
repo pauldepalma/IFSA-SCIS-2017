@@ -1,0 +1,2 @@
+float min_f0 = 100;
+float max_f0 = 600; 

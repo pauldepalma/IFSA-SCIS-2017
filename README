@@ -1,0 +1,34 @@
+The set of programs to do f0 extraction and data collection is broken into four
+steps:
+
+    step1MakeMatrix
+    --Extracts relevant data from .its files in the LENA file system
+
+    step2ExtractFiles
+    --Extracts conversations from the wave file that defines a recording session.
+      There could be many thousands of these per .wav file
+
+    step3ExtractF0
+    --For each conversation, mean f0 as extracted and saved to a one of
+      eight csv files
+
+    step4ProcessData
+    --Computes mean f0 for various subgroups along with standard deviation
+    --As time goes on, will compute other values as well.
+    --I'm considering rewriting this in R and including other programs to do
+      do data analysis.
+
+    Utils
+    --Ultimately will hold various utility programs to make life easier
+    --Right now will create a dictionary representing the LENA file system.
+    --You can use this dictionary to determine how far processing has gotten
+
+Each of the steps is a python program in its own directory with its own
+constant and driver files.  Execute the system, execute the drivers in steps 1, 2, 3,
+and 4 in that order.  In every case wait until stepA has exited before. To
+do all steps in sequence, execute the script found in step0Start.
+
+An important directory is f0Repos.  This holds up to eight csv files for each
+classes we are investigating: male-nonadjacent-hh child, etc. 
+
+      

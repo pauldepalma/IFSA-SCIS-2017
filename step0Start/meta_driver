@@ -1,0 +1,42 @@
+#!/bin/sh
+#
+#Shell script to invoke driver for all steps in the system
+#Each step has a different Const.py class.  Be sure that
+#these are set up properly
+
+python ../step1MakeMatrix/driver.py
+
+if [ $? = 0 ]; then
+   python ../step2ExtractFiles/driver.py
+else 
+   echo 'Step 1 Failed'
+   exit
+fi
+
+if [ $? = 0 ]; then
+   python ../step3GetF0/driver.py
+else
+  echo 'Step 2 Failed'
+  exit
+fi
+
+if [ $? = 0 ]; then
+   python ../step4ProcessData/driver.py
+else
+   echo 'Step 3 Failed'
+   exit
+fi
+
+if [ $? = 0 ]; then
+   python ../step5AnalyzeData/driver.py
+else
+   echo 'Step 4 Failed'
+   exit
+fi
+
+if [ $? = 0 ]; then
+   echo 'All Five Steps Completed Successfully'
+else
+   echo 'Step 5 Failed'
+   exit
+fi

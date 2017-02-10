@@ -1,0 +1,3 @@
+Processing 3 Families
+Processing 46456 Conversations In Total
+Processing Family KA05 recorded: 2010_08f0 from 6647 Conversations to Process
